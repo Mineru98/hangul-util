@@ -83,7 +83,7 @@ divide_by_jong("ㄺ")
 
 ## 한글 결합
 
-`combine_hangul(word: str | (str | List[str])[])`
+`combine_hangul(word: Union[str, List[str]])`
 
 ```python
 from hangul_utils import combine_hangul
@@ -150,7 +150,7 @@ re.sub(regex, r"<mark>\g<0></mark>", input_string)
 
 ## 숫자를 한글로
 
-`format_number(format: int | str | null)`
+`format_number(format: Optional[Union[int, str]])`
 
 ```python
 from hangul_utils import format_number, format_number_all
@@ -166,7 +166,7 @@ format_number_all(123456789)
 
 ## 날짜 포맷
 
-`format_date(date: str | Date, formatStyle: str)`
+`format_date(date: Union[str, datetime], format_style: str)`
 
 ```python
 from datetime import datetime
@@ -186,7 +186,7 @@ format_date("2024-12-25", "YYYY년 MM월 DD일")
 
 ## 비슷한 단어 찾기
 
-`correct_by_distance(word: str, list: List[str], option)`
+`correct_by_distance(word: str, word_list: List[str], is_split: Optional[bool], distance: Optional[int], max_slice: Optional[int])`
 
 ```python
 from hangul_utils import correct_by_distance
@@ -208,7 +208,7 @@ correct_by_distance("number", ["number", "str", "bool"], distance=4, max_slice=1
 
 ## 문자 정렬
 
-`sort_by_asc(array: any[], compare: List[str] | str)`
+`sort_by_asc(array: List[Any], compare: Union[List[str], str])`
 
 ```python
 from hangul_utils import sort_by_asc, sort_by_desc
@@ -237,7 +237,7 @@ sort_by_asc(array, ["name", "age"])
 
 ### 별도의 조건 지정하기
 
-`sort_by_groups(array: any[], groups: List[Union[int, str]], order_asc: bool, compare: str)`
+`sort_by_groups(array: List[Any], groups: List[Union[int, str]], order_asc: bool, compare: Optional[str])`
 
 ```python
 from hangul_utils import sort_by_groups
@@ -256,7 +256,7 @@ sort_by_groups(["대리", "사원", "사장", "회장", "부장"], groups)
 
 ## 한영 변환
 
-`convert_key(word: str, toLanguage: 'ko' | 'en', isCombine: bool = True)`
+`convert_key(word: str, to_language: Literal['ko', 'en'], is_combine: bool = True)`
 
 ```python
 from hangul_utils import convert_key
@@ -268,7 +268,7 @@ convert_key("tkrhk", "ko")
 # 사과
 ```
 
-`toLanguage` 타입 **키보드 키** 에 맞게 문자를 변환시켜줍니다.
+`to_language` 타입 **키보드 키** 에 맞게 문자를 변환시켜줍니다.
 
 ```python
 convert_key("tkrhk", "ko", False)
@@ -445,7 +445,7 @@ reverse_by_object({ 'a': 1, 'b': 2, 'c': 3 })
 
 ### get_nested_property
 
-`get_nested_property(key: List[str] | str, object: any)`
+`get_nested_property(key: Union[str, List[str]], object: any)`
 
 ```python
 from hangul_utils import get_nested_property

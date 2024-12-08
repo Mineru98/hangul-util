@@ -41,9 +41,9 @@ def get_distance(first: str, second: str) -> int:
 def correct_by_distance(
     word: str,
     word_list: List[str],
-    is_split: bool = True,
+    is_split: Optional[bool] = True,
     distance: Optional[int] = None,
-    max_slice: int = 10,
+    max_slice: Optional[int] = 10,
 ) -> List[str]:
     """주어진 단어와 가장 유사한 단어들을 찾음
 
