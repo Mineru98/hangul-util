@@ -7,7 +7,7 @@
 ## 설치
 
 ```bash
-pip install hangul-utils
+pip install py-hangul-utils
 ```
 
 ## Functions
