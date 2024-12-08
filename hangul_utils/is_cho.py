@@ -1,5 +1,4 @@
 from hangul_utils.constant import JONG_COMPLETE_HANGUL
-from hangul_utils.is_jong import is_jong_by_code
 
 
 def is_cho_by_char(cho: str = "") -> bool:

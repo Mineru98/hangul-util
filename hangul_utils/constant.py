@@ -147,11 +147,11 @@ KEY_MAPS = {
     "ㅡ": "m",
 }
 
-number_units = ["", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구"]
+NUMBER_UNITS = ["", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구"]
 
-ten_units = ["", "십", "백", "천"]
+TEN_UNITS = ["", "십", "백", "천"]
 
-thousand_units = [
+THOUSAND_UNITS = [
     "",
     "만",
     "억",
@@ -172,7 +172,7 @@ thousand_units = [
     "무량대수",
 ]
 
-OVER_DIGIT = len(thousand_units) * len(ten_units)
+OVER_DIGIT = len(THOUSAND_UNITS) * len(TEN_UNITS)
 
 WEEK_DAY = ["월", "화", "수", "목", "금", "토", "일"]
 

@@ -1,4 +1,4 @@
-from hangul_utils.constant import OVER_DIGIT, number_units, ten_units, thousand_units
+from hangul_utils.constant import NUMBER_UNITS, OVER_DIGIT, TEN_UNITS, THOUSAND_UNITS
 from hangul_utils.utils import chunk_at_end, is_number, zero_pad
 
 
@@ -11,7 +11,7 @@ def format_number(format: int | str | None = ""):
         return " ".join(
             reversed(
                 " ".join(
-                    f"{int(item)}{thousand_units[index]}"
+                    f"{int(item)}{THOUSAND_UNITS[index]}"
                     for index, item in enumerate(reversed(chunks))
                     if int(item)
                 )
@@ -43,12 +43,12 @@ def format_number_all(format: int | str | None = ""):
             for i in range(4):
                 number = int(zero_item[i])
                 if number:
-                    unit = ten_units[3 - i]
+                    unit = TEN_UNITS[3 - i]
                     number_unit += (
-                        f"{'' if unit and number == 1 else number_units[number]}{unit}"
+                        f"{'' if unit and number == 1 else NUMBER_UNITS[number]}{unit}"
                     )
 
-            thousand_unit = thousand_units[index] if index < len(thousand_units) else ""
+            thousand_unit = THOUSAND_UNITS[index] if index < len(THOUSAND_UNITS) else ""
             return f"{number_unit}{thousand_unit}"
 
         return " ".join(

@@ -4,7 +4,7 @@ from hangul_utils.divide import divide_hangul
 from hangul_utils.sort_hangul import sort_by_asc
 
 
-def get_distance(first: str, second: str, _memo: Dict[str, int] = {}) -> int:
+def get_distance(first: str, second: str) -> int:
     """레벤슈타인 거리 계산 (반복적 구현)
 
     Args:
@@ -62,13 +62,12 @@ def correct_by_distance(
 
     min_dist = []
     divided_word = "".join(divide_hangul(word, True))
-    _memo: Dict[str, int] = {}
 
     for candidate in word_list:
         dist = (
-            get_distance(divided_word, "".join(divide_hangul(candidate, True)), _memo)
+            get_distance(divided_word, "".join(divide_hangul(candidate, True)))
             if is_split
-            else get_distance(word, candidate, _memo)
+            else get_distance(word, candidate)
         )
 
         if dist <= distance:

@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="hangul_utils",
+    name="py-hangul-utils",
     version="1.0.0",
     packages=find_packages(),
     install_requires=[],
@@ -10,7 +10,7 @@ setup(
     description="한글 유틸 패키지",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/Mineru98/hangul-utils",
+    url="https://github.com/Mineru98/py-hangul-utils",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
